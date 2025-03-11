@@ -51,12 +51,13 @@ public class ContactService {
 	}
 	
 	public String uploadPhoto(String id, MultipartFile file) {
-		Contact contact = getContact(id);
-		String photoUrl = photoFunction.apply(id, file);
-		contact.setPhotoUrl(photoUrl);
-		contactRepo.save(contact);
-		return photoUrl;	
-	}
+        log.info("Saving picture for user ID: {}", id);
+        Contact contact = getContact(id);
+        String photoUrl = photoFunction.apply(id, file);
+        contact.setPhotoUrl(photoUrl);
+        contactRepo.save(contact);
+        return photoUrl;
+    }
 	
 	private final Function<String, String> fileExtension = filename -> Optional.of(filename).filter(name -> name.contains("."))
             .map(name -> "." + name.substring(filename.lastIndexOf(".") + 1)).orElse(".png");
