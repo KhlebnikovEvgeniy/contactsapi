@@ -23,15 +23,16 @@ import lombok.Setter;
 @JsonInclude(NON_DEFAULT)
 @Table(name = "contacts")
 public class Contact {
-	@Id
-	@UuidGenerator
-	@Column(name = "id", unique = true, updatable = false)
-	private String id;
-	private String name;
-	private String email;
-	private String title;
-	private String phone;
-	private String address;
-	private String status;
-	private String photoUrl;
+    @Id
+    @UuidGenerator
+    @Column(name = "id", unique = true, updatable = false)
+    private String id;
+    private String name;
+    private String email;
+    private String title;
+    private String phone;
+    private String address;
+    private String status;
+    private String photoUrl;
 }
+
