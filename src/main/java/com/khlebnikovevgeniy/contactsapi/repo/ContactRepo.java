@@ -9,5 +9,6 @@ import com.khlebnikovevgeniy.contactsapi.domain.Contact;
 
 @Repository
 public interface ContactRepo extends JpaRepository<Contact, String> {
-	Optional<Contact> findById(String id);
+    Optional<Contact> findById(String id);
 }
+
