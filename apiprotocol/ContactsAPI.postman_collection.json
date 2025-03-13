@@ -1,0 +1,194 @@
+{
+	"info": {
+		"_postman_id": "b20be3a9-e1e1-4558-9a6b-4e743338afef",
+		"name": "ContactsAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27585548"
+	},
+	"item": [
+		{
+			"name": "PostContact",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Evgeniy\",\r\n    \"email\": \"evgeniy@gmail.com\",\r\n    \"address\": \"Jerusalem\",\r\n    \"title\": \"Developer\",\r\n    \"status\": \"Active\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/contacts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostContactImage",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "13e748b0-d69e-4f44-97c8-44c3d7d0b146",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "3E9F-OjDf/Messi.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/contacts/photo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contacts",
+						"photo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetContactImage",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "5d4fa184-60e6-45c6-aaa8-6b29c5def37a",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "AbI1qM2Zu/Eskiz 1.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/contacts/image/13e748b0-d69e-4f44-97c8-44c3d7d0b146.png",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contacts",
+						"image",
+						"13e748b0-d69e-4f44-97c8-44c3d7d0b146.png"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetContacts",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/contacts?size=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contacts"
+					],
+					"query": [
+						{
+							"key": "size",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetOneContact",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/contacts/13e748b0-d69e-4f44-97c8-44c3d7d0b146",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contacts",
+						"13e748b0-d69e-4f44-97c8-44c3d7d0b146"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateContact",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"13e748b0-d69e-4f44-97c8-44c3d7d0b146\",\r\n    \"name\": \"Lionel Andrés Messi Cuccittini\",\r\n    \"email\": \"Messi@gmail.com\",\r\n    \"title\": \"Soccer Player\",\r\n    \"address\": \"Rosario, Argentina\",\r\n    \"status\": \"Active\",\r\n    \"photoUrl\": \"http://localhost:8080/contacts/image/13e748b0-d69e-4f44-97c8-44c3d7d0b146.png\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/contacts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
